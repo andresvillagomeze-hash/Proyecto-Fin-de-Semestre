@@ -53,7 +53,7 @@ def data_cleaning(df):
 @st.cache_data
 def data_loader(nombre_archivo):
     # 1. Definimos dónde empezar a buscar (Carpeta del Usuario)
-    ruta_base = Path.home() 
+    ruta_base = Path(__file__).parent 
     # 2. os.walk recorre todo el árbol de directorios hacia abajo
     for root, dirs, files in os.walk(ruta_base):
         if nombre_archivo in files:
@@ -415,5 +415,6 @@ st.info(
     f"Recomendación: techo de descuento por subcategoría, aprobación al superarlo y plan de intervención "
     f"en estados con rojo recurrente."
 )
+
 
 
